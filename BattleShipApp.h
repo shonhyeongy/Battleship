@@ -3,8 +3,8 @@
 
 class CBattleShipApp{
 public:
-    CBattleShipApp();
-    ~CBattleShipApp();
+//    CBattleShipApp();
+//    ~CBattleShipApp();
     
     void play();
 protected:
