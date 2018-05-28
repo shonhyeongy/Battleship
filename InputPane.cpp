@@ -18,11 +18,4 @@ void InputPane::Draw() {
     wattron(m_pWindow, COLOR_PAIR(3));
     wrefresh(m_pWindow);
 
-    move(17, 40);
-    keypad(m_pWindow, false);
-    char cmd[2];
-    scanw("%s", cmd);
-
-    mvwprintw(m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
-    wrefresh(m_pWindow); // 누적된 변경사항 화면에 표시
 }

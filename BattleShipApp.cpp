@@ -21,6 +21,21 @@ void CBattleShipApp::Init() {
 void CBattleShipApp::play() {
     Init();
     Render();
+
+    while (true) {
+        move(17, 40);
+        keypad(m_pInputPane->m_pWindow, false);
+        char cmd[2];
+        scanw("%s", cmd);
+        string scmd(cmd);
+        if (scmd == "gg") {
+            break;
+        }
+        mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
+        wrefresh(m_pInputPane->m_pWindow); // 누적된 변경사항 화면에 표시
+
+    }
+
     Destroy();
 }
 
@@ -40,5 +55,4 @@ void CBattleShipApp::Destroy() {
     getch();
     endwin();
     delete m_pMap;
-
 }

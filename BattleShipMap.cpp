@@ -11,16 +11,15 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
             m_mapData[i][j] = '0';
         }
     }
-    
-    // 랜덤 설정
 
+    // 랜덤 설정
 
     for (int i = 0; i < MAP_SIZE; ++i) {
         mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);
         mvprintw(m_y + m_height, m_x + 2 + i, "%d", 1 + i);
     }
 
-    mvwprintw(m_pWindow, 0, 3, name); //< MAP > 이라는 글자 출력
+    mvwprintw(m_pWindow, 0, 3, name); // < MAP > 이라는 글자 출력
 
 }
 

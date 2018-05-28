@@ -1,3 +1,5 @@
+#pragma once
+
 #include "StatPane.h"
 #include "InputPane.h"
 #include "BattleShipMap.h"
