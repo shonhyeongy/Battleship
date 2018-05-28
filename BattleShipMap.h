@@ -1,5 +1,7 @@
 
 #include "Pane.h"
+#include <string>
+using namespace std;
 
 #define MAP_SIZE 8
 #ifndef CBattleShipMap_h
@@ -7,9 +9,7 @@
 
 class CBattleShipMap : public Pane {
 public:
-    CBattleShipMap();
-
-    ~CBattleShipMap();
+    CBattleShipMap(const char* name, int x = 4, int y = 4);
 
     void Draw();
 

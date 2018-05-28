@@ -2,7 +2,7 @@ CC = g++
 TARGET = battleship
 SOURCES = main.cpp \
             BattleShipApp.cpp \
-            BattleShipMap_1.cpp \
+            BattleShipMap.cpp \
             Pane.cpp \
             StatPane.cpp
 LDFLAGS = -lncurses
