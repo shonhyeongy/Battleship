@@ -33,8 +33,6 @@ InputPane::InputPane(int x, int y, int width, int height)
     mvwprintw(m_pWindow ,0,3, "< INPUT >");
 }
 
-InputPane::~InputPane()
-{}
 
 void InputPane::Draw()
 {

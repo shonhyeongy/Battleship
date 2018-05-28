@@ -1,6 +1,7 @@
 CC = g++
 TARGET = battleship
-SOURCES = BattleShipApp.cpp \
+SOURCES = main.cpp \
+            BattleShipApp.cpp \
             BattleShipMap_1.cpp \
             Pane.cpp \
             StatPane.cpp
