@@ -38,6 +38,5 @@ void CBattleShipApp::Destroy(){
     getch();
     endwin();
     delete m_pMap;
-    
-    
+
 }
