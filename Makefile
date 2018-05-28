@@ -4,7 +4,8 @@ SOURCES = main.cpp \
             BattleShipApp.cpp \
             BattleShipMap.cpp \
             Pane.cpp \
-            StatPane.cpp
+            StatPane.cpp \
+            InputPane.cpp
 LDFLAGS = -lncurses
 all:
 	$(CC) -o $(TARGET) $(SOURCES) $(LDFLAGS)

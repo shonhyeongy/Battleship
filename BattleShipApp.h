@@ -1,4 +1,5 @@
 #include "StatPane.h"
+#include "InputPane.h"
 #include "BattleShipMap.h"
 
 class CBattleShipApp {
