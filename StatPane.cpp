@@ -6,7 +6,7 @@
 //  Copyright © 2018년 손현기. All rights reserved.
 //
 
-#include "StatPane.hpp"
+#include "StatPane.h"
 
 StatPane::StatPane(int x, int y, int width, int height)
 :Pane(x,y,width,height)

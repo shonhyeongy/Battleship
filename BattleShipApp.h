@@ -1,3 +1,6 @@
+#include "StatPane.h"
+#include "BattleShipMap.h"
+
 class CBattleShipApp{
 public:
     CBattleShipApp();
@@ -10,7 +13,7 @@ protected:
     void Destroy();
     
 protected:
-    CBattleShipApp* m_pMap;
+    CBattleShipMap* m_pMap;
     StatPane* m_pStatPane;
     InputPane* m_pInputPane;
-}
+};

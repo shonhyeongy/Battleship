@@ -1,4 +1,5 @@
 #include "BattleShipApp.h"
+#include "BattleShipMap.h"
 
 void CBattleShipApp::Init(){
     
@@ -11,7 +12,7 @@ void CBattleShipApp::Init(){
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, COLOR_YELLOW, COLOR_BLACK);
     
-    m_pMap = new CBattleShipApp();
+    m_pMap = new CBattleShipMap();
     m_pStatPane = new StatPane(30,3,30,6);
     m_pInputPane = new InputPane(30,15,30,4);
 }

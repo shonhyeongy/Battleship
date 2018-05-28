@@ -1,3 +1,8 @@
+#include <ncurses.h>
+
+#ifndef Pane_h
+#define Pane_h
+
 class Pane{
 public:
     Pane(int x, int y, int width, int height);
@@ -8,4 +13,6 @@ protected:
     int m_width, m_height;
     int m_x , m_y;
     WINDOW* m_pWindow;
-}
+};
+
+#endif

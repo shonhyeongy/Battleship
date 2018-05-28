@@ -11,7 +11,9 @@
 
 #include <stdio.h>
 #include "Pane.h"
-#endif /* StatPane_hpp */
+
+
+
 
 class StatPane : public Pane
 {
@@ -31,3 +33,5 @@ public:
     
     virtual void Draw();
 };
+
+#endif /* StatPane_hpp */
