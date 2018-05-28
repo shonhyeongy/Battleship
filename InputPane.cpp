@@ -5,17 +5,21 @@
 #include "InputPane.h"
 
 InputPane::InputPane(int x, int y, int width, int height)
-        :Pane(x,y,width,height)
-{
-    mvwprintw(m_pWindow ,0,3, "< INPUT >");
+        : Pane(x, y, width, height) {
+    mvwprintw(m_pWindow, 0, 3, "< INPUT >");
 }
 
-void InputPane::Draw()
-{
-    wattron(m_pWindow,COLOR_PAIR(3));
-    mvwprintw(m_pWindow,1,2,"Input position...(ex A 3)");
-    mvwprintw(m_pWindow,2,2,"Input : ");
-    wattron(m_pWindow,COLOR_PAIR(3));
+void InputPane::Draw() {
+    wattron(m_pWindow, COLOR_PAIR(3));
+    mvwprintw(m_pWindow, 1, 2, "Input position...(ex A 3)");
+    mvwprintw(m_pWindow, 2, 2, "Input : ");
+
+    wattron(m_pWindow, COLOR_PAIR(3));
     wrefresh(m_pWindow);
+
+    move(17, 40);
+    keypad(m_pWindow, false);
+    char cmd[2];
+    scanw("%s", cmd);
 
 }
