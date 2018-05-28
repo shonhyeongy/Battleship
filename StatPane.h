@@ -13,24 +13,21 @@
 #include "Pane.h"
 
 
-
-
-class StatPane : public Pane
-{
+class StatPane : public Pane {
 public:
     StatPane(int x, int y, int width, int height);
-    ~StatPane();
-    
+
+    virtual  ~StatPane();
+
     virtual void Draw();
 };
 
-class InputPane : public Pane
-
-{
+class InputPane : public Pane {
 public:
     InputPane(int x, int y, int width, int height);
-    ~InputPane();
-    
+
+    virtual ~InputPane();
+
     virtual void Draw();
 };
 

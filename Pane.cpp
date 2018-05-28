@@ -1,10 +1,9 @@
 #include "Pane.h"
 
-
 Pane::Pane(int x, int y, int width, int height)
 :m_x(x) , m_y(y), m_width(width), m_height(height)
 {
-    m_pWindow = newin(height, width, y,x);
+    m_pWindow = newwin(height, width, y,x);
     box(m_pWindow,0,0);
     wrefresh(m_pWindow);
 }

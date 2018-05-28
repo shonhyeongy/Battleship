@@ -30,7 +30,7 @@ void StatPane::Draw(){
 InputPane::InputPane(int x, int y, int width, int height)
 :Pane(x,y,width,height)
 {
-    mvwpirntw(m_pWindow ,0,3, "< INPUT >");
+    mvwprintw(m_pWindow ,0,3, "< INPUT >");
 }
 
 InputPane::~InputPane()
