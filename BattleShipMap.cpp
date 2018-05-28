@@ -11,6 +11,9 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
             m_mapData[i][j] = '0';
         }
     }
+    
+    // 랜덤 설정
+
 
     for (int i = 0; i < MAP_SIZE; ++i) {
         mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);

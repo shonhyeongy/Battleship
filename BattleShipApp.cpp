@@ -15,7 +15,7 @@ void CBattleShipApp::Init() {
     m_pMap = new CBattleShipMap("Defender");
     m_pMap2 = new CBattleShipMap("Attacker", 4, 25);
     m_pStatPane = new StatPane(30, 3, 30, 6);
-    m_pInputPane = new InputPane(30, 15, 30, 4);
+    m_pInputPane = new InputPane(30, 15, 30, 5);
 }
 
 void CBattleShipApp::play() {

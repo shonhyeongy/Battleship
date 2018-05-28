@@ -6,9 +6,7 @@
 //  Copyright © 2018년 손현기. All rights reserved.
 //
 
-#ifndef StatPane_hpp
-#define StatPane_hpp
-
+#pragma once
 #include <stdio.h>
 #include "Pane.h"
 
@@ -18,4 +16,3 @@ public:
 
     virtual void Draw();
 };
-#endif /* StatPane_hpp */

@@ -13,6 +13,7 @@ void InputPane::Draw() {
     wattron(m_pWindow, COLOR_PAIR(3));
     mvwprintw(m_pWindow, 1, 2, "Input position...(ex A 3)");
     mvwprintw(m_pWindow, 2, 2, "Input : ");
+    mvwprintw(m_pWindow, 3, 2, "Result : ");
 
     wattron(m_pWindow, COLOR_PAIR(3));
     wrefresh(m_pWindow);
@@ -22,4 +23,6 @@ void InputPane::Draw() {
     char cmd[2];
     scanw("%s", cmd);
 
+    mvwprintw(m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
+    wrefresh(m_pWindow); // 누적된 변경사항 화면에 표시
 }
