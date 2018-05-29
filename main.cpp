@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include "BattleShipApp.h"
 
 using namespace std;
 
@@ -189,6 +190,8 @@ int main(int argc, const char *argv[]) {
 
     mg.Print_arr();
 
+    CBattleShipApp battleShipApp;
+    battleShipApp.play();
 
     std::cout << "Hello, World!\n";
     return 0;
