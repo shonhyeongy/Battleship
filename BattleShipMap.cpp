@@ -1,6 +1,7 @@
 #include "BattleShipMap.h"
+#include "Random.h"
 #include <string>
-
+#include <cstdlib>
 using namespace std;
 
 CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
@@ -11,6 +12,47 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
             m_mapData[i][j] = '0';
         }
     }
+
+
+    srand((unsigned int) time(NULL));
+    int direction = -1;
+    int left, right;
+
+    Make mg;
+
+    int size1[5] = {5,4,3,2,2};
+    int size_count = 0;
+
+
+    while (1) {
+        left = rand() % 8;
+        right = rand() % 8;
+        direction = rand() % 4;
+
+        if (size_count > 4) {
+            break;
+        } else {
+            if (mg.Random_select_position(left, right, direction, size1[size_count], m_mapData) == 0) {
+                size_count++;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // 랜덤 설정
 
