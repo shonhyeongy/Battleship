@@ -41,7 +41,7 @@ void CBattleShipApp::play() {
 
 void CBattleShipApp::Render() {
     mvprintw(1, 1, "<< Battle Ship Game >>");
-
+    m_pMap->randomDeploy();
     m_pMap->Draw();
     m_pMap2->Draw();
     m_pStatPane->Draw();
