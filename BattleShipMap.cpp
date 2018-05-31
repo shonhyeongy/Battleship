@@ -13,7 +13,6 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
         }
     }
 
-
     for (int i = 0; i < MAP_SIZE; ++i) {
         mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);
         mvprintw(m_y + m_height, m_x + 2 + i, "%d", 1 + i);

@@ -15,7 +15,6 @@ void InputPane::Draw() {
     mvwprintw(m_pWindow, 2, 2, "Input : ");
     mvwprintw(m_pWindow, 3, 2, "Result : ");
 
-    wattron(m_pWindow, COLOR_PAIR(3));
     wrefresh(m_pWindow);
 
 }

@@ -15,6 +15,7 @@ public:
     void randomDeploy(); //m_mapData 를 randomize
 
 protected:
+    friend class CBattleShipApp;
     char m_mapData[MAP_SIZE][MAP_SIZE];
 
 };

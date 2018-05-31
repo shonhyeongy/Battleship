@@ -11,6 +11,8 @@ void CBattleShipApp::Init() {
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
     init_pair(2, COLOR_CYAN, COLOR_BLACK);
     init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+    init_pair(4, COLOR_RED, COLOR_BLACK);
+    init_pair(5, COLOR_BLACK, COLOR_WHITE);
 
     m_pMap = new CBattleShipMap("Defender");
     m_pMap2 = new CBattleShipMap("Attacker", 4, 25);
@@ -31,6 +33,12 @@ void CBattleShipApp::play() {
         if (scmd == "gg") {
             break;
         }
+        m_pMap->m_mapData[cmd[0]-97][cmd[1]-48-1] = '1';
+        m_pMap->Draw();
+        m_pMap2->Draw();
+
+        m_pStatPane->Draw(1|4);
+
         mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
         wrefresh(m_pInputPane->m_pWindow); // 누적된 변경사항 화면에 표시
 
