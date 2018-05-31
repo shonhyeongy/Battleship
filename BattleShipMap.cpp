@@ -13,18 +13,27 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
         }
     }
 
+    for (int i = 0; i < MAP_SIZE; ++i) {
+        mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);
+        mvprintw(m_y + m_height, m_x + 2 + i, "%d", 1 + i);
+    }
 
-    srand((unsigned int) time(NULL));
-    int direction = -1;
-    int left, right;
+    mvwprintw(m_pWindow, 0, 3, name); // < MAP > 이라는 글자 출력
+
+}
+
+void CBattleShipMap::randomDeploy(){
 
     Make mg;
 
     int size1[5] = {5,4,3,2,2};
     int size_count = 0;
 
-
+    srand((unsigned int) time(NULL));
+    int direction = -1;
+    // battleship 랜덤 배치
     while (1) {
+        int left, right;
         left = rand() % 8;
         right = rand() % 8;
         direction = rand() % 4;
@@ -37,35 +46,7 @@ CBattleShipMap::CBattleShipMap(const char* name, int x, int y)
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // 랜덤 설정
-
-    for (int i = 0; i < MAP_SIZE; ++i) {
-        mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);
-        mvprintw(m_y + m_height, m_x + 2 + i, "%d", 1 + i);
-    }
-
-    mvwprintw(m_pWindow, 0, 3, name); // < MAP > 이라는 글자 출력
-
 }
-
-
 void CBattleShipMap::Draw() {
     wattron(m_pWindow, COLOR_PAIR(1)); //색결정
     for (int i = 0; i < MAP_SIZE; ++i) {
