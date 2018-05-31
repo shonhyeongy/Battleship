@@ -1,6 +1,7 @@
 #include "BattleShipApp.h"
 #include "BattleShipMap.h"
 
+
 void CBattleShipApp::Init() {
 
     initscr();
@@ -33,11 +34,17 @@ void CBattleShipApp::play() {
         if (scmd == "gg") {
             break;
         }
-        m_pMap->m_mapData[cmd[0]-97][cmd[1]-48-1] = '1';
+
         m_pMap->Draw();
+
+        if (m_pMap->getFromCode(cmd) == '0') {
+            m_pMap2->getFromCode(cmd) = 'M';
+        } else {
+            m_pMap2->getFromCode(cmd) = 'H';
+        }
         m_pMap2->Draw();
 
-        m_pStatPane->Draw(1|4);
+        //m_pStatPane->Draw(1 | 4);
 
         mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
         wrefresh(m_pInputPane->m_pWindow); // 누적된 변경사항 화면에 표시
@@ -64,3 +71,5 @@ void CBattleShipApp::Destroy() {
     endwin();
     delete m_pMap;
 }
+
+

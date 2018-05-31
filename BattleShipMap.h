@@ -14,6 +14,10 @@ public:
     void Draw();
     void randomDeploy(); //m_mapData 를 randomize
 
+    inline char& getFromCode(char cmd[2]){
+        return m_mapData[cmd[0] - 97][cmd[1] - 48 - 1];
+    }
+
 protected:
     friend class CBattleShipApp;
     char m_mapData[MAP_SIZE][MAP_SIZE];
