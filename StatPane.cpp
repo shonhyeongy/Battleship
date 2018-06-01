@@ -13,6 +13,7 @@
 StatPane::StatPane(int x, int y, int width, int height)
         : Pane(x, y, width, height) {
     mvwprintw(m_pWindow, 0, 3, "< STATUS >");
+    mvwprintw(m_pWindow, 5, 2, "Turn : ");
 }
 
 void StatPane::Draw(int number) {

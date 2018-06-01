@@ -8,7 +8,7 @@ public:
     virtual ~Pane();
     virtual void Draw();
 
-protected:
+public:
     int m_width, m_height;
     int m_x , m_y;
      WINDOW* m_pWindow;

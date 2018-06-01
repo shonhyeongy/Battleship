@@ -14,17 +14,17 @@ void CBattleShipApp::Init() {
     init_pair(3, COLOR_YELLOW, COLOR_BLACK);
     init_pair(4, COLOR_RED, COLOR_BLACK);
     init_pair(5, COLOR_BLACK, COLOR_WHITE);
-
+    init_pair(6, COLOR_BLACK, COLOR_BLACK);
     m_pMap = new CBattleShipMap("Defender");
     m_pMap2 = new CBattleShipMap("Attacker", 4, 25);
-    m_pStatPane = new StatPane(30, 3, 30, 6);
+    m_pStatPane = new StatPane(30, 3, 30, 7);
     m_pInputPane = new InputPane(30, 15, 30, 5);
 }
 
 void CBattleShipApp::play() {
     Init();
     Render();
-
+    int count =0;
     while (true) {
         move(17, 40);
         keypad(m_pInputPane->m_pWindow, false);
@@ -37,17 +37,31 @@ void CBattleShipApp::play() {
 
         m_pMap->Draw();
 
-        if (m_pMap->getFromCode(cmd) == '0') {
+	if (m_pMap2->getFromCode(cmd)=='!'){
+		mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result :BOUNDARY");
+	} 
+
+
+	else if ((m_pMap2->getFromCode(cmd) == 'H') ||( m_pMap2->getFromCode(cmd) == 'M') ){
+		mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : ALREADY");
+		
+	}
+	else if (m_pMap->getFromCode(cmd) == '0') {
             m_pMap2->getFromCode(cmd) = 'M';
-            wattron(m_pInputPane->m_pWindow, COLOR_PAIR(4));
-            mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : MISS"); // 변경사항
+	    wattron(m_pInputPane->m_pWindow, COLOR_PAIR(4));
+            mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : MISSED!"); // 변경사항
             wattron(m_pInputPane->m_pWindow, COLOR_PAIR(3));
-        } else {
+	    ++count;
+        } 
+	else {
             m_pMap2->getFromCode(cmd) = 'H';
             wattron(m_pInputPane->m_pWindow, COLOR_PAIR(1));
             mvwprintw(m_pInputPane->m_pWindow, 3, 2, "Result : SUCCESS"); // 변경사항
             wattron(m_pInputPane->m_pWindow, COLOR_PAIR(3));
+	    ++count;
         }
+
+	mvwprintw(m_pStatPane->m_pWindow, 5,2, "Turn : %d",count);
 
 
         bool is_destroyed[] = {true, true, true, true}; // A,B,C,D 순서
@@ -69,7 +83,7 @@ void CBattleShipApp::play() {
         }
 
         //m_pStatPane->Draw(1 | 4);
-        m_pStatPane->Draw(x);
+	m_pStatPane->Draw(x);
 
         wrefresh(m_pInputPane->m_pWindow); // 누적된 변경사항 화면에 표시
 

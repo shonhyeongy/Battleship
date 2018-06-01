@@ -13,9 +13,20 @@ public:
 
     void Draw();
     void randomDeploy(); //m_mapData 를 randomize
+    char data1 = '!';
+    inline char& getFromCode(char const cmd[2]){
+	    
+	if (cmd[0]<=72 && cmd[0]>=65 && cmd[1]<'9' && cmd[1]>'0' ){
+		return m_mapData[cmd[0] - 65][cmd[1] - 48 - 1];
+	}
 
-    inline char& getFromCode(char cmd[2]){
-        return m_mapData[cmd[0] - 97][cmd[1] - 48 - 1];
+	else if (cmd[0]<=104 && cmd[0]>=97 && cmd[1]<'9'&& cmd[1]>'0' ){
+		return m_mapData[cmd[0] - 97][cmd[1] - 48 - 1];
+	}
+
+	else {
+		return data1;
+	}	    
     }
 
 protected:

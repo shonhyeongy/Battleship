@@ -49,9 +49,24 @@ void CBattleShipMap::randomDeploy(){
 }
 void CBattleShipMap::Draw() {
     wattron(m_pWindow, COLOR_PAIR(1)); //색결정
+    init_pair(6, COLOR_BLACK, COLOR_WHITE);
+    init_pair(7, COLOR_BLACK, COLOR_BLUE);
+    init_pair(8, COLOR_BLACK, COLOR_RED);
+
+
     for (int i = 0; i < MAP_SIZE; ++i) {
         for (int j = 0; j < MAP_SIZE; ++j) {
             //숫자 좌표 설정
+	    if (m_mapData[i][j]<=68 && m_mapData[i][j]>=65 ) {
+		    wattron(m_pWindow, COLOR_PAIR(6));
+	    }
+	    else if (m_mapData[i][j]=='H'){
+	    	   wattron(m_pWindow, COLOR_PAIR(8));
+	    }
+	    else if (m_mapData[i][j]== 'M'){
+	    	   wattron(m_pWindow, COLOR_PAIR(7));
+	    }
+	    else{ wattron(m_pWindow, COLOR_PAIR(1)); }
             mvwprintw(m_pWindow, i + 1, j + 2, "%c", m_mapData[i][j]);
         }
     }
